@@ -1,0 +1,73 @@
+/* ---------- Theme tokens ---------- */
+:root {
+  --bg: #e6e9ef;
+  --surface: #e6e9ef;
+  --text: #2c3e50;
+  --text-muted: #7a8699;
+  --shadow-light: #ffffff;
+  --shadow-dark: #c8ccd4;
+  --accent: #6c7cff;
+  --danger: #e74c3c;
+  --success: #27ae60;
+  --input-bg: #e6e9ef;
+  --tab-active-bg: #dde1e9;
+}
+
+body.dark {
+  --bg: #1e222a;
+  --surface: #1e222a;
+  --text: #e6e9ef;
+  --text-muted: #8b93a5;
+  --shadow-light: #262b35;
+  --shadow-dark: #14171d;
+  --accent: #7c8bff;
+  --danger: #ff6b5b;
+  --success: #4cd97b;
+  --input-bg: #1e222a;
+  --tab-active-bg: #232830;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ---------- Skeleton (neumorphic shimmer) ---------- */
+.skeleton-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface) 25%,
+    var(--tab-active-bg) 50%,
+    var(--surface) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  box-shadow:
+    inset 2px 2px 5px var(--shadow-dark),
+    inset -2px -2px 5px var(--shadow-light);
+}
+
+.skeleton-heading { height: 30px; width: 60%; }
+.skeleton-text    { height: 45px; width: 100%; }
+.skeleton-button  { height: 45px; width: 100%; }
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
